@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<set xmlns:android="http://schemas.android.com/apk/res/android"
-	 android:duration="@android:integer/config_shortAnimTime"
-	 android:fillAfter="true">
+<set xmlns:android="http://schemas.android.com/apk/res/android">
 
-	<scale
-		android:fromYScale="30%"
-		android:toYScale="100%"/>
+	<!--<alpha
+		android:duration="@android:integer/config_mediumAnimTime"
+		android:fillAfter="false"
+		android:fillBefore="true"
+		android:fromAlpha="0.3"
+		android:toAlpha="1"/>-->
 </set>
