@@ -1,4 +1,4 @@
-package frlgrd.com.richedittext;
+package frlgrd.richedittext;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

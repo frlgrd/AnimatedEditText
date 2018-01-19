@@ -1,1 +1,1 @@
-include ':app', ':richedittext'
+include ':sample', ':richedittext'

@@ -1,7 +1,9 @@
-package com.frlgrd.richedittext;
+package sample.frlgrd.richedittext;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+
+import com.frlgrd.richedittext.R;
 
 public class MainActivity extends AppCompatActivity {
 

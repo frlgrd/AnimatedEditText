@@ -1,4 +1,4 @@
-package frlgrd.com.richedittext;
+package frlgrd.richedittext;
 
 import org.junit.Test;
 
