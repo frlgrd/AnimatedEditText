@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<set xmlns:android="http://schemas.android.com/apk/res/android">
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+	 android:duration="@android:integer/config_shortAnimTime"
+	 android:fillAfter="true"
+	 android:fillEnabled="true">
 
-	<!--<alpha
-		android:duration="@android:integer/config_mediumAnimTime"
-		android:fillAfter="false"
-		android:fillBefore="true"
-		android:fromAlpha="1"
-		android:toAlpha="0.3"/>-->
+	<scale
+		android:fromXScale="1.0"
+		android:fromYScale="@dimen/expanded_animated_edit_text_input_height"
+		android:pivotX="50%p"
+		android:pivotY="70%p"
+		android:toXScale="1.0"
+		android:toYScale="@dimen/collapsed_animated_edit_text_input_height"/>
 </set>
