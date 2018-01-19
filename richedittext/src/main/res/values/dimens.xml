@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<dimen name="editTextElevation">2dp</dimen>
+	<dimen name="editBackgroundRadius">3dp</dimen>
+	<dimen name="margin">4dp</dimen>
+	<dimen name="input_padding">8dp</dimen>
+	<dimen name="input_drawable_padding">3dp</dimen>
+	<dimen name="expanded_rich_edit_text_input_height">50dp</dimen>
+	<dimen name="collapsed_rich_edit_text_input_height">3dp</dimen>
+</resources>

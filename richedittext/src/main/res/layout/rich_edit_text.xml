@@ -4,35 +4,32 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="wrap_content"
+	android:descendantFocusability="beforeDescendants"
+	android:focusableInTouchMode="true"
 	android:gravity="bottom"
 	android:orientation="vertical">
 
 	<TextView
-		android:id="@+id/hint"
+		android:id="@+id/hintText"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:textColor="@color/colorAccent"
-		tools:text="Hint"/>
+		android:layout_marginLeft="@dimen/margin"
+		android:layout_marginStart="@dimen/margin"
+		android:text="Hint"
+		android:textColor="@color/colorAccent"/>
 
-	<LinearLayout
+	<EditText
+		android:id="@+id/editText"
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:gravity="center_vertical"
-		android:orientation="horizontal">
-
-		<ImageView
-			android:id="@+id/icon"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:src="@android:drawable/ic_lock_idle_lock"
-			tools:ignore="ContentDescription"/>
-
-		<EditText
-			android:id="@+id/editText"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:textColor="@color/colorAccent"
-			tools:ignore="TextFields"
-			tools:text="Input"/>
-	</LinearLayout>
+		android:layout_height="@dimen/expanded_rich_edit_text_input_height"
+		android:layout_marginBottom="@dimen/margin"
+		android:layout_marginLeft="@dimen/margin"
+		android:layout_marginRight="@dimen/margin"
+		android:background="@drawable/edit_text_background"
+		android:drawablePadding="@dimen/input_drawable_padding"
+		android:padding="@dimen/input_padding"
+		android:singleLine="true"
+		android:textCursorDrawable="@drawable/cursor"
+		tools:ignore="TextFields"
+		tools:text="Input"/>
 </LinearLayout>

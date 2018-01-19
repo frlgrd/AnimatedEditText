@@ -2,4 +2,6 @@
 <resources>
 	<color name="colorPrimary">#79af52</color>
 	<color name="colorAccent">#ffffff</color>
+
+	<color name="cursorColor">@color/colorPrimary</color>
 </resources>
