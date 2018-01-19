@@ -1,1 +1,1 @@
-include ':sample', ':richedittext'
+include ':sample', ':AnimatedEditText'

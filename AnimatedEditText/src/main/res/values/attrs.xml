@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<declare-styleable name="RichEditText">
+	<declare-styleable name="AnimatedEditText">
 		<attr name="hintText" format="string"/>
 		<attr name="editTextIcon" format="reference"/>
 	</declare-styleable>

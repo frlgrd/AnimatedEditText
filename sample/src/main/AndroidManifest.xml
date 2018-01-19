@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.frlgrd.richedittext"
+<manifest package="com.frlgrd.animatededittext"
 		  xmlns:android="http://schemas.android.com/apk/res/android">
 
 	<application
@@ -10,7 +10,7 @@
 		android:supportsRtl="true"
 		android:theme="@style/AppTheme">
 		<activity
-			android:name="sample.frlgrd.richedittext.MainActivity"
+			android:name="com.frlgrd.MainActivity"
 			android:label="@string/title_activity_main"
 			android:theme="@style/AppTheme.NoActionBar">
 			<intent-filter>

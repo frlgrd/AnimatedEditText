@@ -7,13 +7,13 @@
 	android:background="@color/colorPrimary"
 	android:orientation="vertical">
 
-	<frlgrd.richedittext.RichEditText
+	<frlgrd.animatededittext.AnimatedEditText
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		app:editTextIcon="@drawable/mail_icon"
 		app:hintText="E-mail"/>
 
-	<frlgrd.richedittext.RichEditText
+	<frlgrd.animatededittext.AnimatedEditText
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		app:editTextIcon="@drawable/mail_icon"

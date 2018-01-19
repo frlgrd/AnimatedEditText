@@ -19,7 +19,7 @@
 	<EditText
 		android:id="@+id/editText"
 		android:layout_width="match_parent"
-		android:layout_height="@dimen/expanded_rich_edit_text_input_height"
+		android:layout_height="@dimen/expanded_animated_edit_text_input_height"
 		android:layout_marginBottom="@dimen/margin"
 		android:layout_marginLeft="@dimen/margin"
 		android:layout_marginRight="@dimen/margin"

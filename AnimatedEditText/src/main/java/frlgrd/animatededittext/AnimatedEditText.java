@@ -1,4 +1,4 @@
-package frlgrd.richedittext;
+package frlgrd.animatededittext;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class RichEditText extends LinearLayout {
+public class AnimatedEditText extends LinearLayout {
 
 	private TextView hintText;
 	private EditText editText;
@@ -23,17 +23,17 @@ public class RichEditText extends LinearLayout {
 	private boolean isCollapsed = true;
 	private Animation expandInputZoneAnimation, collapseInputZoneAnimation;
 
-	public RichEditText(Context context) {
+	public AnimatedEditText(Context context) {
 		super(context);
 		init(null);
 	}
 
-	public RichEditText(Context context, @Nullable AttributeSet attrs) {
+	public AnimatedEditText(Context context, @Nullable AttributeSet attrs) {
 		super(context, attrs);
 		init(attrs);
 	}
 
-	public RichEditText(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+	public AnimatedEditText(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
 		super(context, attrs, defStyleAttr);
 		init(attrs);
 	}
@@ -45,7 +45,7 @@ public class RichEditText extends LinearLayout {
 	}
 
 	private void initView() {
-		inflate(getContext(), R.layout.rich_edit_text, this);
+		inflate(getContext(), R.layout.animated_edit_text, this);
 		editText = findViewById(R.id.editText);
 		hintText = findViewById(R.id.hintText);
 		ViewCompat.setElevation(editText, getResources().getDimension(R.dimen.editTextElevation));
@@ -53,9 +53,9 @@ public class RichEditText extends LinearLayout {
 
 	private void initAttributes(@Nullable AttributeSet attrs) {
 		if (attrs != null) {
-			TypedArray array = getContext().obtainStyledAttributes(attrs, R.styleable.RichEditText);
-			hint = array.getString(R.styleable.RichEditText_hintText);
-			icon = array.getResourceId(R.styleable.RichEditText_editTextIcon, 0);
+			TypedArray array = getContext().obtainStyledAttributes(attrs, R.styleable.AnimatedEditText);
+			hint = array.getString(R.styleable.AnimatedEditText_hintText);
+			icon = array.getResourceId(R.styleable.AnimatedEditText_editTextIcon, 0);
 			array.recycle();
 		}
 
