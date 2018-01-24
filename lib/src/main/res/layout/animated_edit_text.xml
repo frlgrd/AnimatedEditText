@@ -3,29 +3,30 @@
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
-	android:layout_height="70dp"
+	android:layout_height="match_parent"
+	android:background="@color/colorPrimary"
 	android:gravity="bottom"
+	android:minHeight="@dimen/animatedEditTextMinViewHeight"
 	android:orientation="vertical">
 
 	<TextView
 		android:id="@+id/hintText"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_marginLeft="@dimen/margin"
-		android:layout_marginStart="@dimen/margin"
-		android:text="Hint"
-		android:textColor="@color/colorAccent"/>
+		android:layout_margin="@dimen/animatedEditTextStandardMargin"
+		android:textColor="@color/colorAccent"
+		tools:text="Hint"/>
 
 	<EditText
 		android:id="@+id/editText"
 		android:layout_width="match_parent"
-		android:layout_height="@dimen/expanded_animated_edit_text_input_height"
-		android:layout_marginBottom="@dimen/margin"
-		android:layout_marginLeft="@dimen/margin"
-		android:layout_marginRight="@dimen/margin"
+		android:layout_height="@dimen/animatedEditTextCollapsedHeight"
+		android:layout_marginBottom="@dimen/animatedEditTextStandardMargin"
+		android:layout_marginLeft="@dimen/animatedEditTextStandardMargin"
+		android:layout_marginRight="@dimen/animatedEditTextStandardMargin"
 		android:background="@drawable/edit_text_background"
-		android:drawablePadding="@dimen/input_drawable_padding"
-		android:padding="@dimen/input_padding"
+		android:drawablePadding="@dimen/animatedEditTextInputDrawablePadding"
+		android:padding="@dimen/animatedEditTextInputPadding"
 		android:singleLine="true"
 		android:textCursorDrawable="@drawable/cursor"
 		tools:ignore="TextFields"

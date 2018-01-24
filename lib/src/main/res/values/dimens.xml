@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<dimen name="editTextElevation">2dp</dimen>
-	<dimen name="editBackgroundRadius">3dp</dimen>
-	<dimen name="margin">4dp</dimen>
-	<dimen name="input_padding">8dp</dimen>
-	<dimen name="input_drawable_padding">3dp</dimen>
-	<dimen name="expanded_animated_edit_text_input_height">50dp</dimen>
-	<dimen name="collapsed_animated_edit_text_input_height">3dp</dimen>
+	<dimen name="animatedEditTextElevation">2dp</dimen>
+	<dimen name="animatedEditTextBackgroundRadius">3dp</dimen>
+	<dimen name="animatedEditTextStandardMargin">4dp</dimen>
+	<dimen name="animatedEditTextInputPadding">8dp</dimen>
+	<dimen name="animatedEditTextInputDrawablePadding">3dp</dimen>
+	<dimen name="animatedEditTextCollapsedHeight">4dp</dimen>
+	<dimen name="animatedEditTextMinViewHeight">75dp</dimen>
 </resources>
