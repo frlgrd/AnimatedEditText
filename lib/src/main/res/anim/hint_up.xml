@@ -6,5 +6,11 @@
 
 	<translate
 		android:fromYDelta="0%p"
-		android:toYDelta="5%p"/>
+		android:toYDelta="7%p"/>
+
+	<scale
+		android:fromXScale="1.0"
+		android:fromYScale="1.0"
+		android:toXScale="0.75"
+		android:toYScale="0.75"/>
 </set>
