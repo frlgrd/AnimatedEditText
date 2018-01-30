@@ -6,6 +6,40 @@ Implementation of [this](https://www.pinterest.fr/pin/406731410091824542/) anima
 
 ![Gif](art/aet.gif)
 
+Usage
+------
+
+```xml
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    android:padding="16dp">
+    
+    <frlgrd.animatededittext.AnimatedEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:editTextIcon="@drawable/name_icon"
+        app:editTextInputType="name"
+        app:hintText="Name"/>
+    <frlgrd.animatededittext.AnimatedEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:editTextIcon="@drawable/mail_icon"
+        app:editTextInputType="email"
+        app:hintText="E-mail"/>
+       
+    <frlgrd.animatededittext.AnimatedEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:editTextIcon="@drawable/password_icon"
+        app:editTextInputType="password"
+        app:hintText="Password"/>
+</LinearLayout>
+```
 Download
 --------
 Via Gradle:
@@ -20,4 +54,30 @@ or Maven:
   <version>0.3</version>
   <type>pom</type>
 </dependency>
+```
+
+License
+-----
+```
+MIT License
+
+Copyright (c) 2018 François Legrand
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 ```
