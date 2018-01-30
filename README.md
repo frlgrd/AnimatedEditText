@@ -9,8 +9,8 @@ Implementation of [this](https://www.pinterest.fr/pin/406731410091824542/) ui pr
 
 ![Gif](art/aet.gif)
 
-Usage
-------
+## Usage
+
 
 ```xml
 <LinearLayout
@@ -43,14 +43,34 @@ Usage
         app:editTextInputType="password"
         app:hintText="Password"/>
 </LinearLayout>
+
 ```
-Download
---------
+####  Download
 Via Gradle:
 
 ```groovy
-compile 'com.frlgrd:animated-edit-text:1.0.0'
+dependencies {
+    compile 'com.frlgrd:animated-edit-text:1.0.0'
+}
 ```
+
+#### Attributes
+
+```
+app:editTextIcon="reference"
+```
+Reference to a drawable used as drawableLeft (optional). 
+
+```
+app:hintText="string"
+```
+Standard edit text hint (optional).
+```
+app:editTextInputType="text|name|email|password|nonKeyboard|number|phone"
+```
+Apply an input type on the internal editText. Default value is `text`. Note : `nonKeyboard` allows you override 
+input method like date picker instead of soft keyboard.
+
 License
 -----
 ```
