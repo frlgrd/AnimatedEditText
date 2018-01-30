@@ -68,7 +68,7 @@ app:hintText="string"
 ```
 app:editTextInputType="text|name|email|password|nonKeyboard|number|phone"
 ```
-> Apply an input type on the internal editText. Default value is `text`. Note : `nonKeyboard` allows you override input method like date picker instead of soft keyboard.
+> Apply an input type on the internal editText. Default value is `text`. Note : `nonKeyboard` allows you to override input method like show a date picker instead of soft keyboard.
 
 License
 -----
