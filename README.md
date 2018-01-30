@@ -2,7 +2,7 @@ AnimatedEditText
 ================
 [ ![Download](https://api.bintray.com/packages/frlgrd/maven/animated-edit-text/images/download.svg) ](https://bintray.com/frlgrd/maven/animated-edit-text/_latestVersion)
 
-Implementation of[this](https://www.pinterest.fr/pin/406731410091824542/) animated input.
+Implementation of [this](https://www.pinterest.fr/pin/406731410091824542/) animated input.
 
 ![Gif](art/aet.gif)
 
