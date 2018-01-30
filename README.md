@@ -48,7 +48,7 @@ Implementation of [this](https://www.pinterest.fr/pin/406731410091824542/) ui pr
 ####  Download
 Via Gradle:
 
-```groovy
+```Gradle
 dependencies {
     compile 'com.frlgrd:animated-edit-text:1.0.0'
 }
