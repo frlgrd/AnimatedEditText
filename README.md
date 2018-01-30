@@ -45,13 +45,6 @@ Implementation of [this](https://www.pinterest.fr/pin/406731410091824542/) ui pr
 </LinearLayout>
 
 ```
-####  Download
-
-```Gradle
-dependencies {
-    compile 'com.frlgrd:animated-edit-text:1.0.0'
-}
-```
 
 #### Attributes
 
@@ -69,6 +62,13 @@ app:editTextInputType="text|name|email|password|nonKeyboard|number|phone"
 ```
 > Apply an input type on the internal editText. Default value is `text`. Note : `nonKeyboard` allows you to override input method like show a date picker instead of soft keyboard.
 
+####  Download
+
+```Gradle
+dependencies {
+    compile 'com.frlgrd:animated-edit-text:1.0.0'
+}
+```
 License
 -----
 ```
