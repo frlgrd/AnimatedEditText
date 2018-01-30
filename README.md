@@ -46,7 +46,6 @@ Implementation of [this](https://www.pinterest.fr/pin/406731410091824542/) ui pr
 
 ```
 ####  Download
-Via Gradle:
 
 ```Gradle
 dependencies {
