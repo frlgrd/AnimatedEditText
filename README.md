@@ -45,14 +45,14 @@ Download
 --------
 Via Gradle:
 ```groovy
-compile 'com.frlgrd:animated-edit-text:0.3'
+compile 'com.frlgrd:animated-edit-text:1.0.0'
 ```
 or Maven:
 ```xml
 <dependency>
   <groupId>com.frlgrd</groupId>
   <artifactId>animated-edit-text</artifactId>
-  <version>0.3</version>
+  <version>1.0.0</version>
   <type>pom</type>
 </dependency>
 ```
