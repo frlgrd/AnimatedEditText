@@ -7,7 +7,7 @@ This is a simple component to animate text inputs.
 
 Implementation of [this](https://www.pinterest.fr/pin/406731410091824542/) ui prototype.
 
-![Gif](https://i.imgur.com/MW8XHdp.gifv)
+![Gif](https://i.imgur.com/MW8XHdp.gif)
 
 ## Usage
 
