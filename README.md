@@ -51,16 +51,16 @@ Implementation of [this](https://www.pinterest.fr/pin/406731410091824542/) ui pr
 ```
 app:editTextIcon="reference"
 ```
-> Reference to a drawable used as drawableLeft (optional). 
+> Reference to a drawable used as drawableLeft (optional). Default value is `0`
 
 ```
 app:hintText="string"
 ```
-> Standard edit text hint (optional).
+> Standard edit text hint (optional). Default value is `null`
 ```
 app:editTextInputType="text|name|email|password|nonKeyboard|number|phone"
 ```
-> Apply an input type on the internal editText. Default value is `text`. Note : `nonKeyboard` allows you to override input method like show a date picker instead of soft keyboard.
+> Apply an input type on the internal editText (optional). Default value is `text`. Note : `nonKeyboard` allows you to override input method like show a date picker instead of soft keyboard.
 
 ####  Download
 
