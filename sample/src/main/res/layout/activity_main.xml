@@ -11,18 +11,23 @@
 	<frlgrd.animatededittext.AnimatedEditText
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		app:editTextIcon="@drawable/mail_icon"
-		app:hintText="E-mail"/>
+		app:editTextIcon="@drawable/name_icon"
+		app:editTextInputType="name"
+		app:hintText="Name"/>
+
+	<frlgrd.animatededittext.AnimatedEditText
+		android:id="@+id/dateInput"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		app:editTextIcon="@drawable/date_icon"
+		app:editTextInputType="nonKeyboard"
+		app:hintText="Birthdate"/>
 
 	<frlgrd.animatededittext.AnimatedEditText
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		app:editTextIcon="@drawable/mail_icon"
+		app:editTextInputType="email"
 		app:hintText="E-mail"/>
 
-	<frlgrd.animatededittext.AnimatedEditText
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		app:editTextIcon="@drawable/mail_icon"
-		app:hintText="E-mail"/>
 </LinearLayout>

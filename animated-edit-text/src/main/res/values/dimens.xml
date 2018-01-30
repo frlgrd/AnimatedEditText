@@ -5,6 +5,6 @@
 	<dimen name="animatedEditTextStandardMargin">4dp</dimen>
 	<dimen name="animatedEditTextInputPadding">8dp</dimen>
 	<dimen name="animatedEditTextInputDrawablePadding">3dp</dimen>
-	<dimen name="animatedEditTextCollapsedHeight">4dp</dimen>
+	<dimen name="animatedEditTextCollapsedHeight">3dp</dimen>
 	<dimen name="animatedEditTextMinViewHeight">75dp</dimen>
 </resources>

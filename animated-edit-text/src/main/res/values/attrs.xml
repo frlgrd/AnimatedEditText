@@ -3,5 +3,14 @@
 	<declare-styleable name="AnimatedEditText">
 		<attr name="hintText" format="string"/>
 		<attr name="editTextIcon" format="reference"/>
+		<attr name="editTextInputType" format="enum">
+			<enum name="text" value="0"/>
+			<enum name="name" value="1"/>
+			<enum name="email" value="2"/>
+			<enum name="password" value="3"/>
+			<enum name="nonKeyboard" value="4"/>
+			<enum name="number" value="5"/>
+			<enum name="phone" value="6"/>
+		</attr>
 	</declare-styleable>
 </resources>

@@ -10,6 +10,7 @@ import android.os.SystemClock;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewCompat;
 import android.text.Editable;
+import android.text.InputType;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -29,6 +30,7 @@ public class AnimatedEditText extends LinearLayout {
 	 */
 	private String hint;
 	private int icon;
+	@InputTypes.Type private int inputType = InputTypes.TEXT;
 
 	/**
 	 * Internal
@@ -43,6 +45,8 @@ public class AnimatedEditText extends LinearLayout {
 	private ValueAnimator expandInputZoneAnimation, collapseInputZoneAnimation;
 
 	private boolean viewReady = false;
+
+	private OnNonKeyboardRequestListener onNonKeyboardRequestListener;
 
 	public AnimatedEditText(Context context) {
 		super(context);
@@ -59,11 +63,31 @@ public class AnimatedEditText extends LinearLayout {
 		init(attrs);
 	}
 
+	public void setOnNonKeyboardRequestListener(OnNonKeyboardRequestListener onNonKeyboardRequestListener) {
+		this.onNonKeyboardRequestListener = onNonKeyboardRequestListener;
+	}
+
+	public EditText getEditText() {
+		return editText;
+	}
+
+	protected void onEditTextFocusChanged(boolean hasFocus) {
+		if (!viewReady) {
+			return;
+		}
+		if (hasFocus && isCollapsed) {
+			expand();
+		} else if (!hasFocus && isEmpty() && !isCollapsed) {
+			collapse();
+		}
+	}
+
 	private void init(@Nullable AttributeSet attrs) {
 		initView();
 		initAttributes(attrs);
 		initAnimations();
 		removeEditTextAttributes();
+		initInputType();
 	}
 
 	private void initView() {
@@ -74,14 +98,7 @@ public class AnimatedEditText extends LinearLayout {
 
 		editText.setOnFocusChangeListener(new OnFocusChangeListener() {
 			@Override public void onFocusChange(View v, boolean hasFocus) {
-				if (!viewReady) {
-					return;
-				}
-				if (hasFocus && isCollapsed) {
-					expand();
-				} else if (!hasFocus && isEmpty() && !isCollapsed) {
-					collapse();
-				}
+				onEditTextFocusChanged(hasFocus);
 			}
 		});
 	}
@@ -91,9 +108,10 @@ public class AnimatedEditText extends LinearLayout {
 			TypedArray array = getContext().obtainStyledAttributes(attrs, R.styleable.AnimatedEditText);
 			hint = array.getString(R.styleable.AnimatedEditText_hintText);
 			icon = array.getResourceId(R.styleable.AnimatedEditText_editTextIcon, 0);
+			inputType = array.getInt(R.styleable.AnimatedEditText_editTextInputType, inputType);
 			array.recycle();
 		}
-		updateAttribute();
+		hintText.setText(hint);
 	}
 
 	private void initAnimations() {
@@ -113,7 +131,7 @@ public class AnimatedEditText extends LinearLayout {
 		float expandedHeight = getHeight() - (hintText.getHeight() + getVerticalMargin(hintText) + getVerticalMargin(editText));
 		expandInputZoneAnimation = buildValueAnimator(collapsedHeight, expandedHeight, duration, new Runnable() {
 			@Override public void run() {
-				applyEditTextAttributes();
+				applyEditTextAttributes(false);
 			}
 		});
 		collapseInputZoneAnimation = buildValueAnimator(expandedHeight, collapsedHeight, duration, new Runnable() {
@@ -122,7 +140,6 @@ public class AnimatedEditText extends LinearLayout {
 			}
 		});
 	}
-
 
 	private ValueAnimator buildValueAnimator(float startValue, float endValue, int duration, final Runnable doOnStart) {
 		ValueAnimator valueAnimator = ValueAnimator.ofInt(Math.round(startValue), Math.round(endValue));
@@ -143,6 +160,31 @@ public class AnimatedEditText extends LinearLayout {
 		return valueAnimator;
 	}
 
+	private void initInputType() {
+		switch (inputType) {
+			case InputTypes.TEXT:
+				editText.setInputType(InputType.TYPE_CLASS_TEXT);
+				break;
+			case InputTypes.NAME:
+				editText.setInputType(InputType.TYPE_TEXT_VARIATION_PERSON_NAME);
+				break;
+			case InputTypes.EMAIL:
+				editText.setInputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
+				break;
+			case InputTypes.PASSWORD:
+				editText.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+				break;
+			case InputTypes.NON_KEYBOARD:
+				break;
+			case InputTypes.NUMBER:
+				editText.setInputType(InputType.TYPE_CLASS_NUMBER);
+				break;
+			case InputTypes.PHONE:
+				editText.setInputType(InputType.TYPE_CLASS_PHONE);
+				break;
+		}
+	}
+
 	@SuppressLint("ClickableViewAccessibility") @Override public boolean onTouchEvent(MotionEvent event) {
 		if (event.getAction() == MotionEvent.ACTION_DOWN && isCollapsed) {
 			expand();
@@ -150,17 +192,22 @@ public class AnimatedEditText extends LinearLayout {
 		return super.onTouchEvent(event);
 	}
 
-	private void updateAttribute() {
-		hintText.setText(hint);
-		applyEditTextAttributes();
-	}
-
-	private void applyEditTextAttributes() {
+	private void applyEditTextAttributes(boolean shouldFocus) {
 		editText.setText(savedText);
 		editText.setCompoundDrawablesWithIntrinsicBounds(icon, 0, 0, 0);
-		editText.requestFocus();
-		editText.dispatchTouchEvent(MotionEvent.obtain(SystemClock.uptimeMillis(), SystemClock.uptimeMillis(), MotionEvent.ACTION_DOWN, 0, 0, 0));
-		editText.dispatchTouchEvent(MotionEvent.obtain(SystemClock.uptimeMillis(), SystemClock.uptimeMillis(), MotionEvent.ACTION_UP, 0, 0, 0));
+		if (shouldFocus) {
+			focus();
+		}
+	}
+
+	private void focus() {
+		if (inputType == InputTypes.NON_KEYBOARD && onNonKeyboardRequestListener != null) {
+			onNonKeyboardRequestListener.onNonKeyboardRequested();
+		} else {
+			editText.requestFocus();
+			editText.dispatchTouchEvent(MotionEvent.obtain(SystemClock.uptimeMillis(), SystemClock.uptimeMillis(), MotionEvent.ACTION_DOWN, 0, 0, 0));
+			editText.dispatchTouchEvent(MotionEvent.obtain(SystemClock.uptimeMillis(), SystemClock.uptimeMillis(), MotionEvent.ACTION_UP, 0, 0, 0));
+		}
 	}
 
 	private void removeEditTextAttributes() {
@@ -176,7 +223,7 @@ public class AnimatedEditText extends LinearLayout {
 		expandInputZoneAnimation.start();
 		hintText.startAnimation(hintUpAnimation);
 		isCollapsed = false;
-		applyEditTextAttributes();
+		applyEditTextAttributes(true);
 	}
 
 	public void collapse() {
