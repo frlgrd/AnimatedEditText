@@ -68,7 +68,9 @@ app:editTextInputType="text|name|email|password|nonKeyboard|number|phone"
 repositories {
     jcenter()
 }
+```
 
+```Gradle
 dependencies {
     compile 'com.frlgrd:animated-edit-text:1.0.0'
 }
