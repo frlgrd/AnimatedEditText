@@ -4,7 +4,7 @@ AnimatedEditText
 
 Implementation of[this](https://www.pinterest.fr/pin/406731410091824542/) animated input.
 
-![](https://i.imgur.com/77rGNT3.gif)
+![Gif](art/aet.gif)
 
 Download
 --------
