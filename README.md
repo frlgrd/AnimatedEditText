@@ -25,13 +25,14 @@ Usage
         app:editTextIcon="@drawable/name_icon"
         app:editTextInputType="name"
         app:hintText="Name"/>
+        
     <frlgrd.animatededittext.AnimatedEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:editTextIcon="@drawable/mail_icon"
         app:editTextInputType="email"
         app:hintText="E-mail"/>
-       
+        
     <frlgrd.animatededittext.AnimatedEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
